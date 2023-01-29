@@ -46,8 +46,12 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(attackInput + " from " + playerMovement.playerNum);
-        if (Input.GetButtonDown(attackInput))
+        CheckKeyPress();
+    }
+    
+    void CheckKeyPress()
+    {
+            if (Input.GetButtonDown(attackInput))
         {
             if (playerMovement.stopControl == false)
             {
