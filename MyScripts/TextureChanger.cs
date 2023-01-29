@@ -15,7 +15,12 @@ public class TextureChanger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Y))
+        CheckKeyPress();
+    }
+    
+    void CheckKeyPress()
+    {
+            if (Input.GetKeyDown(KeyCode.Y))
         {
             randomTexture2.GetRandomTexture();
         }
