@@ -28,18 +28,9 @@ public class TextureSwap : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(swapInput);
         if (Input.GetButtonDown(swapInput))
         {
-            FindClosestNPC();
-
-            foreach(Transform child in model.transform)
-            {
-                if (child.GetComponent<Renderer>() != null)
-                {
-                    child.GetComponent<Renderer>().material = closestNPC.GetComponent<Renderer>().material;
-                }
-            }
+           SwapTexture();
         }
     }
 
@@ -58,5 +49,18 @@ public class TextureSwap : MonoBehaviour
                 closestNPC = currentNPC;
             }
         }
+    }
+    
+    void SwapTexture()
+    {
+     FindClosestNPC();
+
+            foreach(Transform child in model.transform)
+            {
+                if (child.GetComponent<Renderer>() != null)
+                {
+                    child.GetComponent<Renderer>().material = closestNPC.GetComponent<Renderer>().material;
+                }
+            }
     }
 }
